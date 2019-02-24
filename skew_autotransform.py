@@ -39,7 +39,6 @@ def skew_autotransform(DF, include = None, exclude = None, plot = False, thresho
     #Helper function that checks if all values are positive
     def make_positive(series):
         minimum = np.amin(series)
-        
         #If minimum is negative, offset all values by a constant to move all values to positive teritory
         if minimum <= 0:
             series = series + abs(minimum) + 0.01
