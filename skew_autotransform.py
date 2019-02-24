@@ -12,7 +12,8 @@ Created on Sat Feb 23 14:42:46 2019
 #  -  Automatically handles negative values
 #  -  Auto recognizes positive /negative skewness
 
-
+# Further documentation available here:
+# https://datamadness.github.io/Skewness_Auto_Transform
 
 
 
@@ -41,7 +42,7 @@ def skew_autotransform(DF, include = None, exclude = None, plot = False, thresho
         
         #If minimum is negative, offset all values by a constant to move all values to positive teritory
         if minimum <= 0:
-            series = series + minimum + 0.01
+            series = series + abs(minimum) + 0.01
         return series
     
     
