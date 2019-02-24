@@ -24,7 +24,16 @@ import scipy.stats as ss
 import matplotlib.pyplot as plt
 
 def skew_autotransform(DF, include = None, exclude = None, plot = False, threshold = 1, exp = False):
-    colnames = DF.columns.values
+    
+    #Get list of column names that should be processed based on input parameters
+    if include is None and exclude is None:
+        colnames = DF.columns.values
+    elif include is not None:
+        colnames = include
+    elif exclude is not None:
+        colnames = [item for item in list(DF.columns.values) if item not in exclude]
+    else:
+        print('No columns to process!')
     
     #Helper function that checks if all values are positive
     def make_positive(series):
