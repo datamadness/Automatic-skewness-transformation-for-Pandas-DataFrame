@@ -1,5 +1,6 @@
 # Python function to automatically transform skewed data in Pandas DataFrame
-A python function that takes a Pandas DataFrame and automatically transforms any column that exceed specified skewness. 
+A python function that takes a Pandas DataFrame and automatically transforms any column with numerical data that exceed specified skewness. This is very useful for quickly including skewness transformation in your Machine Learning pipeline.
+The script detects positive / negative skewness and applies suitable transformation.
 Article and example available on [my blog: ](https://datamadness.github.io/Skewness_Auto_Transform). 
 
 ## Python files:
